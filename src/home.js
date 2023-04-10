@@ -1,5 +1,5 @@
 import {React,useState} from "react";
-import {Grid,Typography,TextField,Button} from "@mui/material";
+import {Grid,Typography,TextField,Button,} from "@mui/material";
 import copy from 'copy-to-clipboard';
 import axios from "axios";
 
@@ -19,10 +19,14 @@ const Home = ()=>{
       setHasSearched(!hasSearched)
     }
     return(
-      <Grid container direction="column" justifyContent="center" alignItems="center">
+      <Grid container direction="column" 
+      justifyContent="center" alignItems="center"
+      sx={{border:"solid",width:"500px",height:"400px",marginRight:"auto",marginLeft:"auto"}}>
+        <Grid item sx={{paddingBottom:"20px"}}>
         <Typography variant="h3">MiniURL</Typography>
+        </Grid>
         {hasSearched ? (<Grid item container direction="column" justifyContent="center" alignItems="center">
-       <Grid item sx={{paddingBottom:"10px"}}>
+       <Grid item>
        <Typography> Enter a long URL to make a MiniURL</Typography>
        </Grid>
        <Grid item>
@@ -44,17 +48,17 @@ const Home = ()=>{
        <Grid item sx={{paddingBottom:"10px"}}>
        <Typography sx={{paddingTop:"10px"}}> MiniUrl </Typography>
        </Grid>
-       <Grid item>
+       <Grid item sx={{marginBottom:"30px"}}>
         <TextField id="outlined-basic" label="mini Url" variant="outlined" 
         value={miniUrl} sx={{width:"450px"}}/>
        </Grid>
        <Grid item container direction="row" justifyContent="center" alignItems="center">
-       <Grid item sx={{paddingTop:"10px",marginRight:"10px"}}>
+       <Grid item sx={{marginRight:"10px"}}>
        <Button variant="contained" onClick={()=>{setHasSearched(!hasSearched)}}>
         New mini-Url
         </Button>
        </Grid>
-       <Grid item sx={{paddingTop:"10px",marginRight:"10px"}}>
+       <Grid item sx={{marginRight:"10px"}}>
        <Button variant="contained" onClick={()=>{copy(miniUrl)}}>
         copy mini-Url
         </Button>
