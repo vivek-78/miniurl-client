@@ -12,7 +12,7 @@ const Home = ()=>{
   };
     const fetchData = async() => {
       console.log(longUrl);
-      await axios.post("https://miniurl-api-five.vercel.app/createUrl",
+      await axios.post("https://miniurl2.vercel.app/createUrl",
       {
         url:longUrl
       }).then((data)=>{setMiniUrl(data.data)});
@@ -21,7 +21,7 @@ const Home = ()=>{
     return(
       <Grid container direction="column" 
       justifyContent="center" alignItems="center"
-      sx={{border:"solid",width:"500px",height:"400px",marginRight:"auto",marginLeft:"auto"}}>
+      sx={{border:"solid",width:"420px",height:"400px",marginRight:"auto",marginLeft:"auto"}}>
         <Grid item sx={{paddingBottom:"20px"}}>
         <Typography variant="h3">MiniURL</Typography>
         </Grid>
@@ -31,7 +31,7 @@ const Home = ()=>{
        </Grid>
        <Grid item>
         <TextField id="outlined-basic" label="long Url" 
-        variant="outlined" onChange={handleChange} sx={{width:"450px"}}/>
+        variant="outlined" onChange={handleChange} sx={{width:"400px"}}/>
        </Grid>
        <Grid item sx={{paddingTop:"10px"}}>
        <Button variant="contained" onClick={()=>{fetchData()}}>
@@ -43,14 +43,14 @@ const Home = ()=>{
        <Typography> Your long URL </Typography>
        </Grid>
        <Grid item>
-        <TextField id="outlined-basic" label="long Url" variant="outlined" sx={{width:"450px"}}/>
+        <TextField id="outlined-basic" label="long Url" variant="outlined" sx={{width:"400px"}}/>
        </Grid>
        <Grid item sx={{paddingBottom:"10px"}}>
        <Typography sx={{paddingTop:"10px"}}> MiniUrl </Typography>
        </Grid>
        <Grid item sx={{marginBottom:"30px"}}>
         <TextField id="outlined-basic" label="mini Url" variant="outlined" 
-        value={miniUrl} sx={{width:"450px"}}/>
+        value={miniUrl} sx={{width:"400px"}}/>
        </Grid>
        <Grid item container direction="row" justifyContent="center" alignItems="center">
        <Grid item sx={{marginRight:"10px"}}>
